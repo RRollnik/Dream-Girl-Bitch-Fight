@@ -45,9 +45,6 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SupportBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
