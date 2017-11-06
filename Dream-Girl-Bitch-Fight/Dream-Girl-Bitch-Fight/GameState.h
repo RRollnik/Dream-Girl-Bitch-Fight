@@ -9,11 +9,8 @@
 #include <SDL_ttf.h>
 #include <string>
 
-#include "Player.h"
-#include "ScrollingBackground.h"
+//#include "ScrollingBackground.h"
 #include "AnimatedSprite.h"
-#include "Enemy.h"
-#include "Bullet.h"
 #include "Button.h"
 #include "Text.h"
 
