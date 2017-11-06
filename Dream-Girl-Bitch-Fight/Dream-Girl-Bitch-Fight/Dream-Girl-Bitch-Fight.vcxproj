@@ -33,6 +33,9 @@
     <ClCompile Include="SupportBar.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Button.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{101D1386-5DC5-4743-AF03-57B96D24EE84}</ProjectGuid>
     <RootNamespace>DreamGirlBitchFight</RootNamespace>
@@ -92,6 +95,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>SDL2-2.0.4/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>SDL2-2.0.4\lib</AdditionalLibraryDirectories>
