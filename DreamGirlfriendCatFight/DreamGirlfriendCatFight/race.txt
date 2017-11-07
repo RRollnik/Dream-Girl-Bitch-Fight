@@ -1,0 +1,4 @@
+"asian.bmp"
+"black.bmp"
+"latino.bmp"
+"white.bmp"

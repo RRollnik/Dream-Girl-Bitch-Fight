@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
+    <ClCompile Include="CharacterCreationState.cpp" />
     <ClCompile Include="FightState.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -130,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
+    <ClInclude Include="CharacterCreationState.h" />
     <ClInclude Include="FightState.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
@@ -137,6 +139,10 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SupportBar.h" />
     <ClInclude Include="Text.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="hair.txt" />
+    <Text Include="race.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
