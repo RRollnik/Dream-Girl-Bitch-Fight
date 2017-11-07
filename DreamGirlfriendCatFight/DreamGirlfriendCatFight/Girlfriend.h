@@ -15,7 +15,6 @@ public:
 	int getHealth() { return health; }
 	void setHealth(int _health) { health = _health; }
 
-
 	void Status();
 	void Gear();
 
