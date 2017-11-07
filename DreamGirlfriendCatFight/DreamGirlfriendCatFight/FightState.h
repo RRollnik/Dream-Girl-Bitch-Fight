@@ -10,7 +10,7 @@ public:
 	~FightState();
 
 	void StateLoop();
-	void Fight();
+	void Fight(Girlfriend* _a, Girlfriend* _b);
 	void BarBuffs(int _buffs);
 
 private:

@@ -7,7 +7,7 @@ FightState::FightState(Girlfriend* _a, Girlfriend* _b)
 	quit = false;
 
 	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, int gFriendA.health())
-	HealthBarB =
+	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, int gFriendB.health())
 }
 
 FightState::~FightState()
@@ -22,11 +22,19 @@ void FightState::StateLoop()
 
 		Fight(gFriendA, gFriendB);
 		Fight(gFriendB, gFriendA);
-		
-		AreYouAGoodBoyfriend->Update();
 
+		//gFriendA()->Update();
+		//gFriendB()->Update();
+		//Since we'll make changes directly to the gFriend in Fight(), presumably, we don't need to update them. Probably.
+
+		AreYouAGoodBoyfriend->Update();
+		//I'm not sure how much we want the gFriend to move, but if we do we'll need to improve the DrawOutfit, and potentially make a new DrawGirlfriend that'll get the offset add it to the current X and Y of
+		//the image, and so on
 
 		background->draw();
+		AreYouAGoodBoyfriend()->draw();
+		gFriendA->DrawOutfit();
+		gFriendB->DrawOutfit();
 
 		SDL_RenderPresent(renderer);
 	}
@@ -54,7 +62,23 @@ void FightState::BarBuffs(int _buffs)
 	}
 }
 
-void FightState::Fight()
+void FightState::Fight(Girlfriend* _myTurn, Girlfriend* _notMyTurn)
 {
-	 
+	if (_myTurn.Insult() > _notMyTurn.Insult())
+	{
+		_notMyTurn->setDebuffed();
+	}
+	else if (_notMyTurn.Insult() > _myTurn.Insult())
+	{
+		_myTurn->setDebuffed;
+	}
+
+
+	int AttackPower = _myTurn.Attack();
+
+	_notMyTurn.Dodge(AttackPower);
+
+
+
+	
 }
