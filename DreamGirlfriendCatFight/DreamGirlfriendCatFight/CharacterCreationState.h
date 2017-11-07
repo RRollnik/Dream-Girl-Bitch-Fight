@@ -16,6 +16,7 @@ public:
 	void StateLoop(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state);
 	void Update();
 	void Draw();
+	void StateLoop();
 
 	Sprite GetOutfit(int _player);
 	std::vector<int> GetOutfitStats(int _player);

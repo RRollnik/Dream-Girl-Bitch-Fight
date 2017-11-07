@@ -10,8 +10,7 @@ public:
 	~FightState();
 
 	void StateLoop();
-	void Fight(Girlfriend* _a, Girlfriend* _b);
-	void BarBuffs(int _buffs);
+	void Fight();
 
 private:
 
@@ -20,6 +19,9 @@ private:
 	SupportBar AreYouAGoodBoyfriend;
 	Sprite HealthBarA;
 	Sprite HealthBarB;
+
+	bool player1Turn;
+	bool player2Turn;
 
 	bool quit;
 };
