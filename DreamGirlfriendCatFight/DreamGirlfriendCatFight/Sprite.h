@@ -13,6 +13,8 @@ public:
 
 	virtual void Draw();
 
+	void makeImage(char* _1, char* _2, char* _3, char* _4, char* _5, char* _6, char* _7);
+
 	void SetY(int _y) { position.y = _y; }
 	void SetX(int _x) { position.x = _x; }
 	void SetH(int _h) { position.h = _h; }

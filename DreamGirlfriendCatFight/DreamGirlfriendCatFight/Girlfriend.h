@@ -16,6 +16,9 @@ public:
 	void Status();
 	void Gear();
 
+	Sprite outfit;
+	std::vector<int> outfitData;
+
 private:
 
 	bool isBuffed;
@@ -30,6 +33,5 @@ private:
 	int athleticism;
 	int bitchiness;
 
-	std::vector<Sprite*> outfit;
 };
 

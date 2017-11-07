@@ -10,11 +10,15 @@ class CharacterCreationState
 {
 public:
 
-	CharacterCreationState(SDL_Renderer * _renderer);
+	CharacterCreationState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~CharacterCreationState();
 
+	void StateLoop(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state);
 	void Update();
 	void Draw();
+
+	Sprite GetOutfit(int _player);
+	std::vector<int> GetOutfitStats(int _player);
 
 protected:
 
@@ -30,5 +34,8 @@ protected:
 	std::vector<Sprite> top;
 	std::vector<Sprite> bottom;
 
-	void readFile(char* _file, int _numWords, SDL_Renderer* _renderer);
+	Sprite* outfit;
+	std::vector<int> outfitData;
+
+	//void readFile(char* _file, int _numWords, SDL_Renderer* _renderer);
 };

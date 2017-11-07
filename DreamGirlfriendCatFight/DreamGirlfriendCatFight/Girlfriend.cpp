@@ -13,7 +13,6 @@ Girlfriend::Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int
 	agility = defaultStatVal;
 	athleticism = defaultStatVal;
 	bitchiness = defaultStatVal;
-
 }
 
 void Girlfriend::Status()

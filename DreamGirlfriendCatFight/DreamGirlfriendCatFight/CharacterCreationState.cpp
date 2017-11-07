@@ -1,6 +1,6 @@
 #include "CharacterCreationState.h"
 
-CharacterCreationState::CharacterCreationState(SDL_Renderer * _renderer)
+CharacterCreationState::CharacterCreationState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state)
 {
 	std::ifstream file("race.txt");
 	if (file.is_open())
@@ -98,6 +98,7 @@ CharacterCreationState::CharacterCreationState(SDL_Renderer * _renderer)
 		}
 	}
 
+	StateLoop(_window, _renderer, _volume, _state);
 }
 
 CharacterCreationState::~CharacterCreationState()
@@ -105,9 +106,10 @@ CharacterCreationState::~CharacterCreationState()
 
 }
 
+/*
 void CharacterCreationState::readFile(char* _file, int _numWords, SDL_Renderer* _renderer)
 {
-	/*
+
 	std::ifstream file("race.txt");
 	if (file.is_open())
 	{
@@ -119,19 +121,53 @@ void CharacterCreationState::readFile(char* _file, int _numWords, SDL_Renderer* 
 	race.push_back(Sprite(_renderer, a1[i], x, y, w, h));
 	}
 	}
-	*/
+
+}
+*/
+
+void CharacterCreationState::StateLoop(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state)
+{
+	bool quit = false;
+	SDL_Event e;
+
+	while (!quit)
+	{
+		while (SDL_PollEvent(&e)) // allow closing SDL window to quit
+		{
+			if (e.type == SDL_QUIT)
+			{
+				_state = 0;
+				quit = true;
+			}
+		}
+
+		SDL_RenderClear(_renderer);
+
+		//background->draw();
+
+		SDL_RenderPresent(_renderer);
+	}
+
 }
 
+Sprite CharacterCreationState::GetOutfit(int _player)
+{
 
 
 
+	return *outfit;
+}
 
+std::vector<int> CharacterCreationState::GetOutfitStats(int _player)
+{
+	return outfitData;
+}
 
 void CharacterCreationState::Update()
 {
 
-	->SetX()
-	->SetY()
+	//->SetX()
+	//->SetY()
 }
 
 void CharacterCreationState::Draw()
