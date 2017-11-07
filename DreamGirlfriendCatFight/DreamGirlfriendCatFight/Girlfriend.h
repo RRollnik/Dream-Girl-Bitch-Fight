@@ -14,7 +14,7 @@ public:
 	void setHealth(int _health) { health = _health; }
 
 	void Status();
-	void Gear();
+	void OutfitStats();
 
 private:
 
@@ -29,6 +29,14 @@ private:
 	int agility;
 	int athleticism;
 	int bitchiness;
+
+	float buff;
+	float debuff;
+
+	int strBonus;
+	int agiBonus;
+	int athBonus;
+	int bitBonus;
 
 	std::vector<Sprite*> outfit;
 };
