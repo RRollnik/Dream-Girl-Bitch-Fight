@@ -3,6 +3,8 @@
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 
+#include <iostream>
+
 #ifdef _MSC_VER
 #include <windows.h>
 #else
@@ -11,7 +13,7 @@
 
 int main(int argc, char*argv[])
 {
-
+	std::cout << "testing\n";
 
 #ifdef _MSC_VER
 	Sleep(3000);
