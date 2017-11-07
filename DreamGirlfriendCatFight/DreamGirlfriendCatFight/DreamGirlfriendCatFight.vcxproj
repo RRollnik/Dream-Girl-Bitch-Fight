@@ -138,6 +138,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Girlfriend.h" />
     <ClInclude Include="HealthBar.h" />
+    <ClInclude Include="OutfitPiece.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SupportBar.h" />
     <ClInclude Include="Text.h" />
