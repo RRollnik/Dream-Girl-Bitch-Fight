@@ -4,15 +4,15 @@
 #include "SDL_keyboard.h"
 #include "Girlfriend.h"
 
-class SupportBar
+class SupportBar : public Sprite
 {
 public:
-	SupportBar(int _health1, int _health2, Girlfriend* _a, Girlfriend* _b);
-	~SupportBar();
+	SupportBar(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h, Girlfriend* _a, Girlfriend* _b);
 
 	void Update();
 	void TakeInput();
 	void Support();
+	void DecreaseSlider();
 
 private:
 
@@ -21,6 +21,11 @@ private:
 
 	int health1;
 	int health2;
+
+	int buffMin;
+	int buffMax;
+
+	int barMax;
 
 	Girlfriend* gFriendA;
 	Girlfriend* gFriendB;

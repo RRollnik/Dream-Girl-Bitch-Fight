@@ -1,6 +1,7 @@
 #ifndef _Sprite_h_
 #define _Sprite_h_
 
+#include <vector>
 #include <SDL.h>
 #include <iostream>
 
