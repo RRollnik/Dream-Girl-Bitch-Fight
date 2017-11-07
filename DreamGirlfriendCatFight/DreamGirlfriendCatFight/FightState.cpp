@@ -73,12 +73,11 @@ void FightState::Fight(Girlfriend* _myTurn, Girlfriend* _notMyTurn)
 		_myTurn->setDebuffed;
 	}
 
+	//if bar is between buff for both myTurn and notMyTurn, need bar to work first before implemtation
+
 
 	int AttackPower = _myTurn.Attack();
 
 	_notMyTurn.Dodge(AttackPower);
 
-
-
-	
 }
