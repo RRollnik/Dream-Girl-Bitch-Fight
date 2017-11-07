@@ -1,5 +1,7 @@
 #pragma once
 #include "Girlfriend.h"
+#include "SupportBar.h"
+
 
 class FightState
 {
@@ -15,6 +17,9 @@ private:
 
 	Girlfriend* gFriendA;
 	Girlfriend* gFriendB;
+	SupportBar AreYouAGoodBoyfriend;
+	Sprite HealthBarA;
+	Sprite HealthBarB;
 
 	bool quit;
 };

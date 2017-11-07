@@ -14,6 +14,7 @@ public:
 
 	void SetY(int _y) { position.y = _y; }
 	void SetX(int _x) { position.x = _x; }
+	void SetH(int _h) { position.h = _h; }
 
 	int GetY() { return position.y; }
 	int GetX() { return position.x; }
