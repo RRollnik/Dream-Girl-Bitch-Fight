@@ -6,8 +6,11 @@ FightState::FightState(Girlfriend* _a, Girlfriend* _b)
 	gFriendB = _b;
 	quit = false;
 
-	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendA)
-	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendB)
+	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendA);
+	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendB);
+
+	player1Turn = true;
+	player2Turn = false;
 }
 
 FightState::~FightState()
@@ -33,51 +36,29 @@ void FightState::StateLoop()
 
 		background->draw();
 		AreYouAGoodBoyfriend()->draw();
-		gFriendA->DrawOutfit();
-		gFriendB->DrawOutfit();
+		gFriendA->Draw();
+		gFriendB->Draw();
 
 		SDL_RenderPresent(renderer);
 	}
 
 }
 
-void FightState::BarBuffs(int _buffs)
+void FightState::Fight()
 {
-	switch (_buffs)
+	if (player1Turn = true)
 	{
-		case 0:
-		{
-			break; //neither are getting buffs
-		}
-		
-		case 1:
-		{
-			gFriendA->setBuffed();
-		}
+		//Player1 attacks
 
-		case 2:
-		{
-			gFriendA->setDebuffed();
-		}
+		player1Turn = false;
+		player2Turn = true;
 	}
-}
-
-void FightState::Fight(Girlfriend* _myTurn, Girlfriend* _notMyTurn)
-{
-	if (_myTurn.Insult() > _notMyTurn.Insult())
+	else if (player2Turn = true)
 	{
-		_notMyTurn->setDebuffed();
+		//Player2 attacks
+
+		player1Turn = true;
+		player2Turn = false;
 	}
-	else if (_notMyTurn.Insult() > _myTurn.Insult())
-	{
-		_myTurn->setDebuffed;
-	}
-
-	//if bar is between buff for both myTurn and notMyTurn, need bar to work first before implemtation
-
-
-	int AttackPower = _myTurn.Attack();
-
-	_notMyTurn.Dodge(AttackPower);
 
 }

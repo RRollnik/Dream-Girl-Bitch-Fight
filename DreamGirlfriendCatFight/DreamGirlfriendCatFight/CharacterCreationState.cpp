@@ -105,6 +105,12 @@ CharacterCreationState::~CharacterCreationState()
 
 }
 
+void CharacterCreationState::StateLoop()
+{
+
+}
+
+
 void CharacterCreationState::readFile(char* _file, int _numWords, SDL_Renderer* _renderer)
 {
 	/*
@@ -120,21 +126,4 @@ void CharacterCreationState::readFile(char* _file, int _numWords, SDL_Renderer* 
 	}
 	}
 	*/
-}
-
-
-
-
-
-
-void CharacterCreationState::Update()
-{
-
-	->SetX()
-	->SetY()
-}
-
-void CharacterCreationState::Draw()
-{
-
 }

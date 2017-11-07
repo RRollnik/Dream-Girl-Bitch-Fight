@@ -15,6 +15,7 @@ public:
 
 	void Update();
 	void Draw();
+	void StateLoop();
 
 protected:
 

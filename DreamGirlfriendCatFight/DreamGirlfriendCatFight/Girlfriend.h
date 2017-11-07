@@ -16,6 +16,8 @@ public:
 	void Status();
 	void OutfitStats();
 
+	void Draw() override;
+
 private:
 
 	bool isBuffed;
