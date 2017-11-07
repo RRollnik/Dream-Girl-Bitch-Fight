@@ -124,6 +124,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Girlfriend.cpp" />
+    <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SupportBar.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Girlfriend.h" />
+    <ClInclude Include="HealthBar.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SupportBar.h" />
     <ClInclude Include="Text.h" />

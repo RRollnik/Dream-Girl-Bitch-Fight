@@ -45,6 +45,9 @@
     <ClCompile Include="CharacterCreationState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HealthBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Girlfriend.h">
@@ -82,5 +85,8 @@
     <Text Include="hair.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <ClInclude Include="HealthBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
