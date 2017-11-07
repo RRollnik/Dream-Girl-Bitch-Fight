@@ -6,8 +6,8 @@ FightState::FightState(Girlfriend* _a, Girlfriend* _b)
 	gFriendB = _b;
 	quit = false;
 
-	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, int gFriendA.health())
-	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, int gFriendB.health())
+	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendA)
+	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendB)
 }
 
 FightState::~FightState()
