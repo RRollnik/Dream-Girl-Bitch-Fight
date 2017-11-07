@@ -1,9 +1,7 @@
 #pragma once
-#include <vector>
 #include "Sprite.h"
-#include "OutfitPiece.h"
 
-class Girlfriend 
+class Girlfriend : public Sprite
 {
 public:
 	Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h);
@@ -16,7 +14,7 @@ public:
 	void setHealth(int _health) { health = _health; }
 
 	void Status();
-	void Gear();
+	void OutfitStats();
 
 private:
 
@@ -32,6 +30,14 @@ private:
 	int athleticism;
 	int bitchiness;
 
-	std::vector<OutfitPiece> Outfit;
+	float buff;
+	float debuff;
+
+	int strBonus;
+	int agiBonus;
+	int athBonus;
+	int bitBonus;
+
+	std::vector<Sprite*> outfit;
 };
 
