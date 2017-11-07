@@ -21,9 +21,6 @@
     <ClCompile Include="Girlfriend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BitchFightState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AnimatedSprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -39,11 +36,14 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FightState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SupportBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BitchFightState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Girlfriend.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FightState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SupportBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

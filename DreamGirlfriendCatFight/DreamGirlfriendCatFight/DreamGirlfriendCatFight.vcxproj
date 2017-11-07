@@ -119,21 +119,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
-    <ClCompile Include="BitchFightState.cpp" />
+    <ClCompile Include="FightState.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Girlfriend.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SupportBar.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.h" />
-    <ClInclude Include="BitchFightState.h" />
+    <ClInclude Include="FightState.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Girlfriend.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SupportBar.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

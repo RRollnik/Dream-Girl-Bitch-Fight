@@ -9,9 +9,11 @@
 #include <unistd.h>
 #endif
 
+void GameLoop();
+
 int main(int argc, char*argv[])
 {
-
+	GameLoop();
 
 #ifdef _MSC_VER
 	Sleep(3000);
@@ -20,4 +22,23 @@ int main(int argc, char*argv[])
 #endif
 
 	return 0;
+}
+
+void GameLoop()
+{
+	bool quit = false;
+	SDL_Event e;
+
+	while (!quit)
+	{
+		while (SDL_PollEvent(&e)) // allow closing SDL window to quit
+		{
+			if (e.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+		}
+
+		//Game loops go here
+	}
 }
