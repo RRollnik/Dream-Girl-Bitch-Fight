@@ -1,15 +1,18 @@
-/*
-
 #include "FightState.h"
 
-FightState::FightState(Girlfriend* _a, Girlfriend* _b)
+FightState::FightState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state, Girlfriend* _a, Girlfriend* _b)
 {
-	gFriendA = _a;
-	gFriendB = _b;
+	window = _window;
+	renderer = _renderer;
+	volume = _volume;
+	state = _state;
+
+	girlFriendA = _a;
+	girlFriendB = _b;
 	quit = false;
 
-	HealthBarA(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendA);
-	HealthBarB(SDL_Renderer* _renderer, char* _HealthBarImage, int _x, int _y, int _w, Girlfriend* gFriendB);
+	healthBarA = new HealthBar(renderer, "_HealthBarImage", 0, 0, 100, 50, girlFriendA);
+	healthBarB = new HealthBar(renderer, "_HealthBarImage", 0, 0, 0, 0, girlFriendA);
 
 	player1Turn = true;
 	player2Turn = false;
@@ -17,6 +20,7 @@ FightState::FightState(Girlfriend* _a, Girlfriend* _b)
 
 FightState::~FightState()
 {
+
 }
 
 void FightState::StateLoop()
@@ -25,21 +29,21 @@ void FightState::StateLoop()
 	{
 		SDL_RenderClear(renderer);
 
-		Fight(gFriendA, gFriendB);
-		Fight(gFriendB, gFriendA);
+		//Fight(gFriendA, gFriendB);
+		//Fight(gFriendB, gFriendA);
 
 		//gFriendA()->Update();
 		//gFriendB()->Update();
 		//Since we'll make changes directly to the gFriend in Fight(), presumably, we don't need to update them. Probably.
 
-		AreYouAGoodBoyfriend->Update();
+	//	AreYouAGoodBoyfriend->Update();
 		//I'm not sure how much we want the gFriend to move, but if we do we'll need to improve the DrawOutfit, and potentially make a new DrawGirlfriend that'll get the offset add it to the current X and Y of
 		//the image, and so on
 
-		background->draw();
-		AreYouAGoodBoyfriend()->draw();
-		gFriendA->Draw();
-		gFriendB->Draw();
+		//background->draw();
+		//AreYouAGoodBoyfriend()->draw();
+		girlFriendA->Draw();
+		girlFriendB->Draw();
 
 		SDL_RenderPresent(renderer);
 	}
@@ -64,5 +68,3 @@ void FightState::Fight()
 	}
 
 }
-
-*/

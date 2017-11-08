@@ -37,7 +37,7 @@ protected:
 	int w = 1080;
 
 	SDL_Window* window;
-	SDL_Renderer * renderer;
+	SDL_Renderer* renderer;
 	int volume;
 	int state;
 
