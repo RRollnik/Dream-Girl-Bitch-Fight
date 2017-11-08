@@ -1,0 +1,8 @@
+PantsBlack.bmp
+PantsBlue.bmp
+PantsGrey.bmp
+PantsWhite.bmp
+SkirtBlack.bmp
+SkirtBlue.bmp
+SkirtGrey.bmp
+SkirtWhite.bmp

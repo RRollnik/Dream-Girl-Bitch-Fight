@@ -1,26 +1,35 @@
 #pragma once
 #include "Girlfriend.h"
+#include "HealthBar.h"
 #include "SupportBar.h"
 
 
 class FightState
 {
 public:
-	FightState(Girlfriend* _a, Girlfriend* _b);
+	FightState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state, Girlfriend* _a, Girlfriend* _b);
 	~FightState();
 
 	void StateLoop();
-	void Fight(Girlfriend* _a, Girlfriend* _b);
-	void BarBuffs(int _buffs);
+	void Fight();
 
 private:
 
-	Girlfriend* gFriendA;
-	Girlfriend* gFriendB;
-	SupportBar AreYouAGoodBoyfriend;
-	Sprite HealthBarA;
-	Sprite HealthBarB;
+	SDL_Window* window;
+	SDL_Renderer* renderer;
+	int volume;
+	int state;
+
+	Girlfriend* girlFriendA;
+	Girlfriend* girlFriendB;
+
+	SupportBar* supportBar;
+
+	HealthBar* healthBarA;
+	HealthBar* healthBarB;
+
+	bool player1Turn;
+	bool player2Turn;
 
 	bool quit;
 };
-

@@ -1,6 +1,6 @@
 #include "Girlfriend.h"
 
-Girlfriend::Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h) : Sprite(_renderer, _file, _x, _y, _w, _h)
+Girlfriend::Girlfriend(SDL_Renderer* _renderer, int _x, int _y, int _w, int _h)
 {
 	isBuffed = false;
 	isDebuffed = false;
@@ -15,7 +15,6 @@ Girlfriend::Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int
 	agility = defaultStatVal;
 	athleticism = defaultStatVal;
 	bitchiness = defaultStatVal;
-
 }
 
 void Girlfriend::Status()
@@ -45,9 +44,14 @@ void Girlfriend::Status()
 
 void Girlfriend::OutfitStats()
 {
-	for (size_t i = 0; i < outfit.size(); ++i)
-	{
+	//for (size_t i = 0; i < outfit.size(); ++i)
+	//{
 		//Determine stat bonuses based on outfit equiped
-	}
+	//}
 	
+}
+
+void Girlfriend::Draw()
+{
+
 }

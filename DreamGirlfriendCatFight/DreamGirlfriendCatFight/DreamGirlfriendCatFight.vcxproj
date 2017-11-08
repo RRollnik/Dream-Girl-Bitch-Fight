@@ -125,6 +125,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Girlfriend.cpp" />
     <ClCompile Include="HealthBar.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Girlfriend.h" />
     <ClInclude Include="HealthBar.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="OutfitPiece.h" />
     <ClInclude Include="Sprite.h" />
@@ -146,8 +148,12 @@
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="bottom.txt" />
     <Text Include="hair.txt" />
     <Text Include="race.txt" />
+    <Text Include="eyes.txt" />
+    <Text Include="lips.txt" />
+    <Text Include="top.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

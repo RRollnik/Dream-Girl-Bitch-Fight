@@ -48,6 +48,9 @@
     <ClCompile Include="HealthBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,6 +86,9 @@
     <ClInclude Include="OutfitPiece.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -97,5 +103,17 @@
     <ClInclude Include="HealthBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <Text Include="lips.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="top.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="bottom.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="eyes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
