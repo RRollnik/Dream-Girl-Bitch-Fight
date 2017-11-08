@@ -1,10 +1,11 @@
 #pragma once
+
 #include "Sprite.h"
 
-class Girlfriend : public Sprite
+class Girlfriend
 {
 public:
-	Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h);
+	Girlfriend(SDL_Renderer* _renderer, int _x, int _y, int _w, int _h);
 
 	void ResetBuffs() { isBuffed = false; isDebuffed = false; }
 	void setBuffed() { isBuffed = true; isDebuffed = false; }
@@ -15,8 +16,10 @@ public:
 
 	void Status();
 	void OutfitStats();
+	
+	void Draw();
 
-	Sprite outfit;
+	std::vector<SDL_Texture*> outfit;
 	std::vector<int> outfitData;
 
 private:

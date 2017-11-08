@@ -31,7 +31,8 @@ public:
 
 protected:
 
-	int x, y = 0;
+	int x = 80;
+	int y = -40;
 	int h = 1920;
 	int w = 1080;
 

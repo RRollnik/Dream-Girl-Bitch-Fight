@@ -9,6 +9,7 @@
 
 #include "CharacterCreationState.h"
 #include "FightState.h"
+#include "Girlfriend.h"
 
 #ifdef _MSC_VER
 #include <windows.h>
@@ -63,9 +64,8 @@ int main(int argc, char*argv[])
 		return false;
 	}
 
-	Girlfriend* player1 = new Girlfriend(renderer, 0, 0, 1080, 1920);
-	Girlfriend* player2 = new Girlfriend();
-
+	Girlfriend* player1 = player1 = new Girlfriend(renderer, 0, 0, 1080, 1920);
+	Girlfriend* player2 = player2 = new Girlfriend(renderer, 0, 0, 1080, 1920);;
 
 	int state = 1;
 
@@ -88,7 +88,7 @@ int main(int argc, char*argv[])
 			player1->outfitData = b.GetOutfitStats(0);
 			player2->outfit = b.GetOutfit(1);
 			player2->outfitData = b.GetOutfitStats(1);
-			delete b;
+			//delete b;
 			break;
 		case 3:
 			//FightState* a = new FightState(window, renderer, volume, state);
