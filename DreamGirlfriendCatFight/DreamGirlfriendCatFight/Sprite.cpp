@@ -4,6 +4,7 @@ Sprite::Sprite(SDL_Renderer * _renderer, char* _file, int _x, int _y, int _w, in
 {
 	SDL_Surface* bmpFile = SDL_LoadBMP(_file);
 
+
 	if (!bmpFile)
 	{
 		std::cout << "Error loading image " << _file;
@@ -36,8 +37,17 @@ void Sprite::Draw()
 	}
 }
 
-void Sprite::makeImage(char* _1, char* _2, char* _3, char* _4, char* _5, char* _6)
+void Sprite::mergeImage(char* &_1, char* _2, bool _create)
 {
+
+	SDL_Surface* bmpFile1 = SDL_LoadBMP(_1);
+	SDL_Surface* bmpFile2 = SDL_LoadBMP(_2);
+
+	SDL_BlitSurface(bmpFile2, NULL, bmpFile1, NULL);
+
+	if(_create)
+		image = SDL_CreateTextureFromSurface(renderer, bmpFile1);
+
 	/*
 	SDL_Surface* bmpFile1 = SDL_LoadBMP(_1);
 	SDL_Surface* bmpFile2 = SDL_LoadBMP(_2);

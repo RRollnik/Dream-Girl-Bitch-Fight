@@ -63,8 +63,9 @@ int main(int argc, char*argv[])
 		return false;
 	}
 
-	//Girlfriend* player1 = new Girlfriend();
-	//Girlfriend* player2 = new Girlfriend();
+	Girlfriend* player1 = new Girlfriend(renderer, 0, 0, 1080, 1920);
+	Girlfriend* player2 = new Girlfriend();
+
 
 	int state = 1;
 
@@ -83,11 +84,11 @@ int main(int argc, char*argv[])
 			break;
 		case 2:
 			b.StateLoop();
-			//player1->outfit = a->GetOutfit(0);
-			//player1->outfitData = a->GetOutfitStats(0);
-			//player2->outfit = a->GetOutfit(1);
-			//player2->outfitData = a->GetOutfitStats(1);
-			//delete a;
+			player1->outfit = b.GetOutfit(0);
+			player1->outfitData = b.GetOutfitStats(0);
+			player2->outfit = b.GetOutfit(1);
+			player2->outfitData = b.GetOutfitStats(1);
+			delete b;
 			break;
 		case 3:
 			//FightState* a = new FightState(window, renderer, volume, state);

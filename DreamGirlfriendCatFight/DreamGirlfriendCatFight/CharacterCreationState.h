@@ -5,10 +5,17 @@
 #include <fstream>
 #include "Sprite.h"
 #include "Button.h"
+#include "InputManager.h"
 
 class CharacterCreationState
 {
 public:
+	std::vector<SDL_Texture*> outfit1;
+	std::vector<SDL_Texture*> outfit2;
+
+	int raceNum1, hairNum1, eyeNum1, lipsNum1, topNum1, bottomNum1 = 0;
+
+	int raceNum2, hairNum2, eyeNum2, lipsNum2, topNum2, bottomNum2 = 0;
 
 	CharacterCreationState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~CharacterCreationState();
@@ -19,7 +26,7 @@ public:
 	void Draw();
 	void StateLoop();
 
-	Sprite GetOutfit(int _player);
+	std::vector<SDL_Texture*> GetOutfit(int _player);
 	std::vector<int> GetOutfitStats(int _player);
 
 protected:

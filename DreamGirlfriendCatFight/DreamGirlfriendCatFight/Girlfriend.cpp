@@ -1,4 +1,3 @@
-/*
 #include "Girlfriend.h"
 
 Girlfriend::Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h) :
@@ -52,5 +51,3 @@ void Girlfriend::OutfitStats()
 	//}
 	
 }
-
-*/
