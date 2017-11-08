@@ -89,6 +89,7 @@ int main(int argc, char*argv[])
 			player1->outfitData = b.GetOutfitStats(0);
 			player2->outfit = b.GetOutfit(1);
 			player2->outfitData = b.GetOutfitStats(1);
+			state = 3;
 			//delete b;
 			break;
 		case 3:

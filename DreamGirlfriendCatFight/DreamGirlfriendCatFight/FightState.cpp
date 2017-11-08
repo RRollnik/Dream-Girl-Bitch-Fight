@@ -10,11 +10,11 @@ FightState::FightState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volu
 	girlFriendA = _a;
 	girlFriendB = _b;
 
-	bkgBarA = new Sprite(renderer, "_bkgBar.bmp", 200, 100, 100, 50);
-	bkgBarB = new Sprite(renderer, "_bkgBar.bmp", 800, 100, 100, 50);
+	bkgBarA = new Sprite(renderer, "BaseBar.bmp", 200, 100, 100, 50);
+	bkgBarB = new Sprite(renderer, "BaseBar.bmp", 800, 100, 100, 50);
 
-	healthBarA = new HealthBar(renderer, "_HealthBarImage.bmp", 200, 100, 100, 50, girlFriendA);
-	healthBarB = new HealthBar(renderer, "_HealthBarImage.bmp", 800, 100, 100, 50, girlFriendB);
+	healthBarA = new HealthBar(renderer, "BaseHealthBar.bmp", 200, 100, 100, 50, girlFriendA);
+	healthBarB = new HealthBar(renderer, "BaseHealthBar.bmp", 800, 100, 100, 50, girlFriendB);
 
 	player1Turn = true;
 	player2Turn = false;
