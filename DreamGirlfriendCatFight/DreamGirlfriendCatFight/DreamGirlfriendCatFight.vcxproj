@@ -127,6 +127,7 @@
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SupportBar.cpp" />
     <ClCompile Include="Text.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Girlfriend.h" />
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MenuState.h" />
     <ClInclude Include="OutfitPiece.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SupportBar.h" />
