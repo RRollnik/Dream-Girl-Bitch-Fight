@@ -19,8 +19,6 @@ public:
 	Sprite outfit;
 	std::vector<int> outfitData;
 
-	void Draw() override;
-
 private:
 
 	bool isBuffed;
@@ -42,7 +40,5 @@ private:
 	int agiBonus;
 	int athBonus;
 	int bitBonus;
-
-	std::vector<Sprite*> outfit;
 };
 

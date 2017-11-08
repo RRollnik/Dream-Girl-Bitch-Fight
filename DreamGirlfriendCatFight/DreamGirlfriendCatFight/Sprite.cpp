@@ -38,6 +38,7 @@ void Sprite::Draw()
 
 void Sprite::makeImage(char* _1, char* _2, char* _3, char* _4, char* _5, char* _6)
 {
+	/*
 	SDL_Surface* bmpFile1 = SDL_LoadBMP(_1);
 	SDL_Surface* bmpFile2 = SDL_LoadBMP(_2);
 	SDL_Surface* bmpFile3 = SDL_LoadBMP(_3);
@@ -45,7 +46,6 @@ void Sprite::makeImage(char* _1, char* _2, char* _3, char* _4, char* _5, char* _
 	SDL_Surface* bmpFile5 = SDL_LoadBMP(_5);
 	SDL_Surface* bmpFile6 = SDL_LoadBMP(_6);
 
-	SDL_Surface* combinedFiles;
 
 	SDL_BlitSurface(bmpFile1, NULL, combinedFiles, NULL);
 	SDL_BlitSurface(bmpFile2, NULL, combinedFiles, NULL);
@@ -55,4 +55,12 @@ void Sprite::makeImage(char* _1, char* _2, char* _3, char* _4, char* _5, char* _
 	SDL_BlitSurface(bmpFile6, NULL, combinedFiles, NULL);
 
 	image = SDL_CreateTextureFromSurface(renderer, combinedFiles);
+
+	SDL_FreeSurface(bmpFile1);
+	SDL_FreeSurface(bmpFile2);
+	SDL_FreeSurface(bmpFile3);
+	SDL_FreeSurface(bmpFile4);
+	SDL_FreeSurface(bmpFile5);
+	SDL_FreeSurface(bmpFile6);
+	*/
 }

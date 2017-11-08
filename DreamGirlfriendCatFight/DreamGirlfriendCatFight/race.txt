@@ -1,4 +1,4 @@
-"AsianBody.bmp"
-"BlackBody.bmp"
-"LatinoBody.bmp"
-"WhiteBody.bmp"
+AsianBody.bmp
+BlackBody.bmp
+LatinoBody.bmp
+WhiteBody.bmp

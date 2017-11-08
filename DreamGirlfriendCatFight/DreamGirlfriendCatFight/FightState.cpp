@@ -1,3 +1,5 @@
+/*
+
 #include "FightState.h"
 
 FightState::FightState(Girlfriend* _a, Girlfriend* _b)
@@ -62,3 +64,5 @@ void FightState::Fight()
 	}
 
 }
+
+*/

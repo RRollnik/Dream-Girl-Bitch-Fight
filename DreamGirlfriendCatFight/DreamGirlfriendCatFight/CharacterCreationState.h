@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include "Sprite.h"
-
+#include "Button.h"
 
 class CharacterCreationState
 {
@@ -12,6 +12,8 @@ public:
 
 	CharacterCreationState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~CharacterCreationState();
+
+	void loadFile(char* _file, std::vector<Sprite*> &_vec);
 
 	void Update();
 	void Draw();
@@ -31,12 +33,12 @@ protected:
 	int volume;
 	int state;
 
-	std::vector<Sprite> race;
-	std::vector<Sprite> hair;
-	std::vector<Sprite> eyes;
-	std::vector<Sprite> lips;
-	std::vector<Sprite> top;
-	std::vector<Sprite> bottom;
+	std::vector<Sprite*> race;
+	std::vector<Sprite*> hair;
+	std::vector<Sprite*> eyes;
+	std::vector<Sprite*> lips;
+	std::vector<Sprite*> top;
+	std::vector<Sprite*> bottom;
 
 	std::vector<int> outfitData;
 

@@ -47,7 +47,7 @@ int main(int argc, char*argv[])
 	//printf("Error: %s \n", Mix_GetError());
 
 	// try to create the window, log error and pause if fail
-	window = SDL_CreateWindow("DreamGirlfriendCatFight", 0, 0, 1920, 1080, SDL_WINDOW_SHOWN | SDL_WINDOW_BORDERLESS | SDL_WINDOW_FULLSCREEN);
+	window = SDL_CreateWindow("DreamGirlfriendCatFight", 0, 0, 1920, 1080, SDL_WINDOW_SHOWN);
 	if (window == NULL)
 	{
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
@@ -63,11 +63,14 @@ int main(int argc, char*argv[])
 		return false;
 	}
 
-
-	Girlfriend* player1 = new Girlfriend();
-	Girlfriend* player2 = new Girlfriend();
+	//Girlfriend* player1 = new Girlfriend();
+	//Girlfriend* player2 = new Girlfriend();
 
 	int state = 1;
+
+	//states?
+	CharacterCreationState b(window, renderer, volume, state);
+
 	// This is the game state manager...
 	while (state > 0)
 	{
@@ -79,16 +82,16 @@ int main(int argc, char*argv[])
 			state = 2;
 			break;
 		case 2:
-			CharacterCreationState* a = new CharacterCreationState(window, renderer, volume, state);
-			player1->outfit = a->GetOutfit(0);
-			player1->outfitData = a->GetOutfitStats(0);
-			player2->outfit = a->GetOutfit(1);
-			player2->outfitData = a->GetOutfitStats(1);
-			delete a;
+			b.StateLoop();
+			//player1->outfit = a->GetOutfit(0);
+			//player1->outfitData = a->GetOutfitStats(0);
+			//player2->outfit = a->GetOutfit(1);
+			//player2->outfitData = a->GetOutfitStats(1);
+			//delete a;
 			break;
 		case 3:
-			FightState* a = new FightState(window, renderer, volume, state);
-			delete a;
+			//FightState* a = new FightState(window, renderer, volume, state);
+			//delete a;
 			state = 1;
 			break;
 		}

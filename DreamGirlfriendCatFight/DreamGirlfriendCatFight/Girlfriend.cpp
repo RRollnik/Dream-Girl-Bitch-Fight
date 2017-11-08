@@ -1,3 +1,4 @@
+/*
 #include "Girlfriend.h"
 
 Girlfriend::Girlfriend(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _w, int _h) :
@@ -45,9 +46,11 @@ void Girlfriend::Status()
 
 void Girlfriend::OutfitStats()
 {
-	for (size_t i = 0; i < outfit.size(); ++i)
-	{
+	//for (size_t i = 0; i < outfit.size(); ++i)
+	//{
 		//Determine stat bonuses based on outfit equiped
-	}
+	//}
 	
 }
+
+*/

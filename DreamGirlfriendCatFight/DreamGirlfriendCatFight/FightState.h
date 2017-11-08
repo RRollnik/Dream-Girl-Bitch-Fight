@@ -1,3 +1,5 @@
+/*
+
 #pragma once
 #include "Girlfriend.h"
 #include "SupportBar.h"
@@ -26,3 +28,4 @@ private:
 	bool quit;
 };
 
+*/

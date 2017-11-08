@@ -1,8 +1,8 @@
-"LipsBlack.bmp"
-"LipsBlueYellow.bmp"
-"LipsGrey.bmp"
-"LipsPink.bmp"
-"LipsPinkGrey.bmp"
-"LipsRed.bmp"
-"LipsTeal.bmp"
-"LipsYellow.bmp"
+LipsBlack.bmp
+LipsBlueYellow.bmp
+LipsGrey.bmp
+LipsPink.bmp
+LipsPinkGrey.bmp
+LipsRed.bmp
+LipsTeal.bmp
+LipsYellow.bmp

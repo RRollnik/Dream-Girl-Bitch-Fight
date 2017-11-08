@@ -2,6 +2,7 @@
 #define _Sprite_h_
 
 #include <vector>
+#include <string>
 #include <SDL.h>
 #include <iostream>
 
