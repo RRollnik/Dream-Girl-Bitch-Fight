@@ -20,11 +20,13 @@ public:
 	CharacterCreationState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~CharacterCreationState();
 
-	void loadFile(char* _file, std::vector<Sprite*> &_vec);
+	void loadFile(char* _file, std::vector<Sprite*> &_vec, std::vector<Sprite*> &_vec2);
 
 	void Update();
 	void Draw();
 	void StateLoop();
+
+	int getNextState() { return nextState; }
 
 	std::vector<SDL_Texture*> GetOutfit(int _player);
 	std::vector<int> GetOutfitStats(int _player);
@@ -35,6 +37,8 @@ protected:
 	int y = -40;
 	int h = 1920;
 	int w = 1080;
+
+	int nextState;
 
 	SDL_Window* window;
 	SDL_Renderer* renderer;
@@ -47,6 +51,13 @@ protected:
 	std::vector<Sprite*> lips;
 	std::vector<Sprite*> top;
 	std::vector<Sprite*> bottom;
+
+	std::vector<Sprite*> race2;
+	std::vector<Sprite*> hair2;
+	std::vector<Sprite*> eyes2;
+	std::vector<Sprite*> lips2;
+	std::vector<Sprite*> top2;
+	std::vector<Sprite*> bottom2;
 
 	std::vector<int> outfitData;
 

@@ -88,6 +88,14 @@ int main(int argc, char*argv[])
 			player1->outfitData = b.GetOutfitStats(0);
 			player2->outfit = b.GetOutfit(1);
 			player2->outfitData = b.GetOutfitStats(1);
+			if (b.getNextState() == 3)
+			{
+				state = 3;
+			}
+			else
+			{
+				state = 0;
+			}
 			//delete b;
 			break;
 		case 3:
@@ -97,6 +105,9 @@ int main(int argc, char*argv[])
 			break;
 		}
 	}
+
+	delete player1;
+	delete player2;
 
 	// clean up, free any memeory we have used
 	SDL_DestroyRenderer(renderer);

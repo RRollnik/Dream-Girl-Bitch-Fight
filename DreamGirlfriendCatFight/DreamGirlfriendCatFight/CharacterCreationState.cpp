@@ -7,12 +7,12 @@ CharacterCreationState::CharacterCreationState(SDL_Window* _window, SDL_Renderer
 	volume = _volume;
 	state = _state;
 
-	loadFile("race.txt", race);
-	loadFile("hair.txt", hair);
-	loadFile("eyes.txt", eyes);
-	loadFile("lips.txt", lips);
-	loadFile("top.txt", top);
-	loadFile("bottom.txt", bottom);
+	loadFile("race.txt", race, race2);
+	loadFile("hair.txt", hair, hair2);
+	loadFile("eyes.txt", eyes, eyes2);
+	loadFile("lips.txt", lips, lips2);
+	loadFile("top.txt", top, top2);
+	loadFile("bottom.txt", bottom, bottom2);
 
 }
 
@@ -21,7 +21,7 @@ CharacterCreationState::~CharacterCreationState()
 
 }
 
-void CharacterCreationState::loadFile(char* _file, std::vector<Sprite*> &_vec)
+void CharacterCreationState::loadFile(char* _file, std::vector<Sprite*> &_vec, std::vector<Sprite*> &_vec2)
 {
 	std::string line;
 
@@ -36,6 +36,7 @@ void CharacterCreationState::loadFile(char* _file, std::vector<Sprite*> &_vec)
 			strcpy_s(cstr, line.length() + 1, line.c_str());
 
 			_vec.push_back(new Sprite(renderer, cstr, x, y, 540, 960));
+			_vec2.push_back(new Sprite(renderer, cstr, x, y, 540, 960));
 
 			delete[] cstr;
 		}
@@ -56,6 +57,8 @@ void CharacterCreationState::StateLoop()
 
 	Sprite* bkg = new Sprite(renderer, "bkg.bmp", 0, 0, 1920, 1080);
 
+	Button* start = new Button(renderer, "start1.bmp", "start2.bmp", (bkg->GetX() / 2), 500, 159, 64);
+
 	Button* btn1 = new Button(renderer, "btn1.bmp", "btn2.bmp", 400, 500, 159, 64);
 	Button* btn2 = new Button(renderer, "btn1.bmp", "btn2.bmp", 100, 500, 159, 64);
 
@@ -73,6 +76,24 @@ void CharacterCreationState::StateLoop()
 
 	Button* btn11 = new Button(renderer, "btn11.bmp", "btn12.bmp", 400, 1000, 159, 64);
 	Button* btn12 = new Button(renderer, "btn11.bmp", "btn12.bmp", 100, 1000, 159, 64);
+
+	Button* btn13 = new Button(renderer, "btn1.bmp", "btn2.bmp", 1420, 500, 159, 64);
+	Button* btn14 = new Button(renderer, "btn1.bmp", "btn2.bmp", 1720, 500, 159, 64);
+
+	Button* btn15 = new Button(renderer, "btn3.bmp", "btn4.bmp", 1420, 600, 159, 64);
+	Button* btn16 = new Button(renderer, "btn3.bmp", "btn4.bmp", 1720, 600, 159, 64);
+
+	Button* btn17 = new Button(renderer, "btn5.bmp", "btn6.bmp", 1420, 700, 159, 64);
+	Button* btn18 = new Button(renderer, "btn5.bmp", "btn6.bmp", 1720, 700, 159, 64);
+
+	Button* btn19 = new Button(renderer, "btn7.bmp", "btn8.bmp", 1420, 800, 159, 64);
+	Button* btn20 = new Button(renderer, "btn7.bmp", "btn8.bmp", 1720, 800, 159, 64);
+
+	Button* btn21 = new Button(renderer, "btn9.bmp", "btn10.bmp", 1420, 900, 159, 64);
+	Button* btn22 = new Button(renderer, "btn9.bmp", "btn10.bmp", 1720, 900, 159, 64);
+
+	Button* btn23 = new Button(renderer, "btn11.bmp", "btn12.bmp", 1420, 1000, 159, 64);
+	Button* btn24 = new Button(renderer, "btn11.bmp", "btn12.bmp", 1720, 1000, 159, 64);
 
 	while (!quit)
 	{
@@ -147,6 +168,71 @@ void CharacterCreationState::StateLoop()
 				if (bottomNum1 > 0)
 					bottomNum1--;
 			}
+			else if (btn13->Clicked())							// player 2 buttons starts here
+			{
+				if (raceNum2 < (race.size() - 1))
+					raceNum2++;
+			}
+			else if (btn14->Clicked())
+			{
+				if (raceNum2 > 0)
+					raceNum2--;
+			}
+			else if (btn15->Clicked())
+			{
+				if (hairNum2 < (hair.size() - 1))
+					hairNum2++;
+			}
+			else if (btn16->Clicked())
+			{
+				if (hairNum2 > 0)
+					hairNum2--;
+			}
+			else if (btn17->Clicked())
+			{
+				if (eyeNum2 < (eyes.size() - 1))
+					eyeNum2++;
+			}
+			else if (btn18->Clicked())
+			{
+				if (eyeNum2 > 0)
+					eyeNum2--;
+			}
+			else if (btn19->Clicked())
+			{
+				if (lipsNum2 < (lips.size() - 1))
+					lipsNum2++;
+			}
+			else if (btn20->Clicked())
+			{
+				if (lipsNum2 > 0)
+					lipsNum2--;
+			}
+			else if (btn21->Clicked())
+			{
+				if (topNum2 < (top.size() - 1))
+					topNum2++;
+			}
+			else if (btn22->Clicked())
+			{
+				if (topNum2 > 0)
+					topNum2--;
+			}
+			else if (btn23->Clicked())
+			{
+				if (bottomNum2 < (bottom.size() - 1))
+					bottomNum2++;
+			}
+			else if (btn24->Clicked())
+			{
+				if (bottomNum2 > 0)
+					bottomNum2--;
+			}
+			else if (start->Clicked())
+			{
+				nextState = 3;
+				quit = true;
+			}
 		}
 
 		SDL_RenderClear(renderer);
@@ -159,6 +245,19 @@ void CharacterCreationState::StateLoop()
 		lips.at(lipsNum1)->Draw();
 		top.at(topNum1)->Draw();
 		bottom.at(bottomNum1)->Draw();
+
+		race2.at(raceNum2)->SetX(1400);
+		race2.at(raceNum2)->Draw();
+		hair2.at(hairNum2)->SetX(1400);
+		hair2.at(hairNum2)->Draw();
+		eyes2.at(eyeNum2)->SetX(1400);
+		eyes2.at(eyeNum2)->Draw();
+		lips2.at(lipsNum2)->SetX(1400);
+		lips2.at(lipsNum2)->Draw();
+		top2.at(topNum2)->SetX(1400);
+		top2.at(topNum2)->Draw();
+		bottom2.at(bottomNum2)->SetX(1400);
+		bottom2.at(bottomNum2)->Draw();
 
 		btn1->Draw();
 		btn2->Draw();
@@ -178,9 +277,54 @@ void CharacterCreationState::StateLoop()
 		btn11->Draw();
 		btn12->Draw();
 
+		btn13->Draw();
+		btn14->Draw();
+
+		btn15->Draw();
+		btn16->Draw();
+
+		btn17->Draw();
+		btn18->Draw();
+
+		btn19->Draw();
+		btn20->Draw();
+
+		btn21->Draw();
+		btn22->Draw();
+
+		btn23->Draw();
+		btn24->Draw();
+
 		SDL_RenderPresent(renderer);
 	}
 
+	delete input;
+	delete bkg;
+	delete btn1;
+	delete btn2;
+	delete btn3;
+	delete btn4;
+	delete btn5;
+	delete btn6;
+	delete btn7;
+	delete btn8;
+	delete btn9;
+	delete btn10;
+	delete btn11;
+	delete btn12;
+	delete btn13;
+	delete btn14;
+	delete btn15;
+	delete btn16;
+	delete btn17;
+	delete btn18;
+	delete btn19;
+	delete btn20;
+	delete btn21;
+	delete btn22;
+	delete btn23;
+	delete btn24;
+	delete start;
 
 	//outfit1 = GetOutfit(1);
 	//outfit2 = GetOutfit(2);

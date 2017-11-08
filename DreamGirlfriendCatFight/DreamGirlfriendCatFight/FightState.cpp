@@ -36,14 +36,12 @@ void FightState::StateLoop()
 		//gFriendB()->Update();
 		//Since we'll make changes directly to the gFriend in Fight(), presumably, we don't need to update them. Probably.
 
-	//	AreYouAGoodBoyfriend->Update();
+		supportBar->Update();
 		//I'm not sure how much we want the gFriend to move, but if we do we'll need to improve the DrawOutfit, and potentially make a new DrawGirlfriend that'll get the offset add it to the current X and Y of
 		//the image, and so on
 
 		//background->draw();
-		//AreYouAGoodBoyfriend()->draw();
-		girlFriendA->Draw();
-		girlFriendB->Draw();
+		supportBar->Draw();
 
 		SDL_RenderPresent(renderer);
 	}

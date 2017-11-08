@@ -4,6 +4,7 @@ Girlfriend::Girlfriend(SDL_Renderer* _renderer, int _x, int _y, int _w, int _h)
 {
 	isBuffed = false;
 	isDebuffed = false;
+	isDefeated = false;
 
 	defaultStatVal = 10;
 	maxHealth = 100;
@@ -15,6 +16,11 @@ Girlfriend::Girlfriend(SDL_Renderer* _renderer, int _x, int _y, int _w, int _h)
 	agility = defaultStatVal;
 	athleticism = defaultStatVal;
 	bitchiness = defaultStatVal;
+
+	strBonus = 0;
+	agiBonus = 0;
+	athBonus = 0;
+	bitBonus = 0;
 }
 
 void Girlfriend::Status()
@@ -40,6 +46,11 @@ void Girlfriend::Status()
 		athleticism = defaultStatVal + athBonus;
 		bitchiness = defaultStatVal + bitBonus;
 	}
+
+	if (health > 1)
+	{
+		isDefeated = true;
+	}
 }
 
 void Girlfriend::OutfitStats()
@@ -48,10 +59,9 @@ void Girlfriend::OutfitStats()
 	//{
 		//Determine stat bonuses based on outfit equiped
 	//}
-	
 }
 
-void Girlfriend::Draw()
+void Girlfriend::Update()
 {
-
+	this->Status();
 }

@@ -16,8 +16,10 @@ public:
 
 	void Status();
 	void OutfitStats();
-	
-	void Draw();
+
+	void Update();
+
+	bool getDefeated() { return isDefeated; }
 
 	std::vector<SDL_Texture*> outfit;
 	std::vector<int> outfitData;
@@ -26,6 +28,7 @@ private:
 
 	bool isBuffed;
 	bool isDebuffed;
+	bool isDefeated;
 
 	int defaultStatVal;
 	int maxHealth;
