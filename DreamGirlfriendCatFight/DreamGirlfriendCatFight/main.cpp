@@ -70,12 +70,9 @@ int main(int argc, char*argv[])
 
 	int state = 1;
 
-
 	//states?
 	MenuState a(window, renderer, volume, state);
 	CharacterCreationState b(window, renderer, volume, state);
-	FightState c(window, renderer, volume, state, player1, player2);
-
 
 	// This is the game state manager...
 	while (state > 0)
@@ -92,15 +89,17 @@ int main(int argc, char*argv[])
 			player1->outfitData = b.GetOutfitStats(0);
 			player2->outfit = b.GetOutfit(1);
 			player2->outfitData = b.GetOutfitStats(1);
-			state = 3;
-			//delete b;
+			state = 0;
 			break;
 		case 3:
-			c.StateLoop();
 			state = 1;
 			break;
 		}
 	}
+	FightState c(window, renderer, volume, state, player1, player2);
+	c.StateLoop();
+
+
 
 	delete player1;
 	delete player2;
