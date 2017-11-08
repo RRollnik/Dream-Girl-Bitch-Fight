@@ -57,7 +57,7 @@ void CharacterCreationState::StateLoop()
 
 	Sprite* bkg = new Sprite(renderer, "bkg.bmp", 0, 0, 1920, 1080);
 
-	Button* start = new Button(renderer, "start1.bmp", "start2.bmp", (bkg->GetX() / 2), 500, 159, 64);
+	Button* start = new Button(renderer, "StartButton.bmp", "StartButton.bmp", (bkg->GetX() / 2), 500, 159, 64);
 
 	Button* btn1 = new Button(renderer, "btn1.bmp", "btn2.bmp", 400, 500, 159, 64);
 	Button* btn2 = new Button(renderer, "btn1.bmp", "btn2.bmp", 100, 500, 159, 64);
@@ -238,6 +238,8 @@ void CharacterCreationState::StateLoop()
 		SDL_RenderClear(renderer);
 
 		bkg->Draw();
+
+		start->Draw();
 
 		race.at(raceNum1)->Draw();
 		hair.at(hairNum1)->Draw();

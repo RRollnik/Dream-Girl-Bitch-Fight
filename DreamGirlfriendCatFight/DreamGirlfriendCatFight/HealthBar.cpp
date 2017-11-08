@@ -9,5 +9,11 @@ HealthBar::HealthBar(SDL_Renderer* _renderer, char* _file, int _x, int _y, int _
 
 void HealthBar::Update()
 {
+	this->Bar();
+	this->Draw();
+}
+
+void HealthBar::Bar()
+{
 	position.w = maxBarWidth * (health / maxHealth);
 }

@@ -10,6 +10,7 @@
 #include "CharacterCreationState.h"
 #include "FightState.h"
 #include "Girlfriend.h"
+#include "MenuState.h"
 
 #ifdef _MSC_VER
 #include <windows.h>
@@ -71,8 +72,10 @@ int main(int argc, char*argv[])
 
 
 	//states?
+	MenuState a(window, renderer, volume, state);
 	CharacterCreationState b(window, renderer, volume, state);
 	FightState c(window, renderer, volume, state, player1, player2);
+
 
 	// This is the game state manager...
 	while (state > 0)
@@ -80,7 +83,7 @@ int main(int argc, char*argv[])
 		switch (state)
 		{
 		case 1:
-			//MenuState* a = new MenuState(window, renderer, volume, state);
+			a.StateLoop();
 			state = 2;
 			break;
 		case 2:
@@ -89,6 +92,7 @@ int main(int argc, char*argv[])
 			player1->outfitData = b.GetOutfitStats(0);
 			player2->outfit = b.GetOutfit(1);
 			player2->outfitData = b.GetOutfitStats(1);
+			state = 3;
 			//delete b;
 			break;
 		case 3:

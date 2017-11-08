@@ -25,6 +25,9 @@ private:
 
 	SupportBar* supportBar;
 
+	Sprite* bkgBarA;
+	Sprite* bkgBarB;
+
 	HealthBar* healthBarA;
 	HealthBar* healthBarB;
 
