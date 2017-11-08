@@ -9,12 +9,16 @@
 class MenuState
 {
 public:
-	MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int &state);
+	MenuState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~MenuState();
 
+	void StateLoop();
 
-private:
-
+protected:
+	SDL_Window* window;
+	SDL_Renderer* renderer;
+	int volume;
+	int state;
 };
 
 #endif

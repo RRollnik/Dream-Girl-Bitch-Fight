@@ -1,6 +1,19 @@
 #include "MenuState.h"
 
-MenuState::MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int &state)
+MenuState::MenuState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state)
+{
+	window = _window;
+	renderer = _renderer;
+	volume = _volume;
+	state = _state;
+}
+
+MenuState::~MenuState() 
+{
+
+}
+
+void MenuState::StateLoop()
 {
 	bool quit = false;
 	SDL_Event e;
@@ -48,7 +61,7 @@ MenuState::MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int
 			state = 0;
 			quit = true;
 		}
-	
+
 		SDL_RenderPresent(renderer);
 
 	}
