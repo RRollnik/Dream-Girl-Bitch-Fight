@@ -11,7 +11,7 @@ public:
 	~FightState();
 
 	void StateLoop();
-	void Fight();
+	void Fight(Girlfriend* _g1, Girlfriend* _g2);
 
 private:
 
@@ -27,9 +27,6 @@ private:
 
 	HealthBar* healthBarA;
 	HealthBar* healthBarB;
-
-	bool player1Turn;
-	bool player2Turn;
 
 	bool quit;
 };

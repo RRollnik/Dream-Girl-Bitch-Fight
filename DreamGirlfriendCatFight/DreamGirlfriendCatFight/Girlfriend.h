@@ -12,6 +12,11 @@ public:
 	void setDebuffed() { isDebuffed = true; isBuffed = false; }
 
 	int getHealth() { return health; }
+	int getStrength() { return strength; }
+	int getAgility() { return agility; }
+	int getAthleticism() { return athleticism; }
+	int getBitchiness() { return bitchiness; }
+
 	void setHealth(int _health) { health = _health; }
 
 	void Status();

@@ -12,9 +12,6 @@ FightState::FightState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volu
 
 	healthBarA = new HealthBar(renderer, "_HealthBarImage", 0, 0, 100, 50, girlFriendA);
 	healthBarB = new HealthBar(renderer, "_HealthBarImage", 0, 0, 0, 0, girlFriendA);
-
-	player1Turn = true;
-	player2Turn = false;
 }
 
 FightState::~FightState()
@@ -45,45 +42,45 @@ void FightState::StateLoop()
 			}
 		}
 
-		//if ((input->LMB() == 1))
+		if ((input->LMB() == 1))
 
 		SDL_RenderClear(renderer);
 
 		bkg->Draw();
 
-		//Fight(gFriendA, gFriendB);
-		//Fight(gFriendB, gFriendA);
+		healthBarA->Update();
+		healthBarA->Draw();
 
-		//gFriendA()->Update();
-		//gFriendB()->Update();
-		//Since we'll make changes directly to the gFriend in Fight(), presumably, we don't need to update them. Probably.
+		healthBarB->Update();
+		healthBarB->Draw();
 
-		//supportBar->Update();
+		girlFriendA->Update();
+		girlFriendB->Update();
+
+		supportBar->Update();
+		supportBar->Draw();
+
+		Fight(girlFriendA, girlFriendB);
+		Fight(girlFriendB, girlFriendA);
+
 		
 
-		//background->draw();
-		supportBar->Draw();
 
 		SDL_RenderPresent(renderer);
 	}
 
 }
 
-void FightState::Fight()
+
+/*
+health = maxHealth;
+strength = defaultStatVal;
+agility = defaultStatVal;
+athleticism = defaultStatVal;
+*/
+
+void FightState::Fight(Girlfriend* _g1, Girlfriend* _g2)
 {
-	if (player1Turn = true)
-	{
-		//Player1 attacks
-
-		player1Turn = false;
-		player2Turn = true;
-	}
-	else if (player2Turn = true)
-	{
-		//Player2 attacks
-
-		player1Turn = true;
-		player2Turn = false;
-	}
-
+	_g2->getAgility
+	_g2->setHealth(_g2->getHealth() - _g1->getStrength());
 }
