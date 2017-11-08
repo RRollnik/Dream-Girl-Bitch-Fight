@@ -91,5 +91,17 @@
     <ClInclude Include="HealthBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <Text Include="lips.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="top.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="bottom.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="eyes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

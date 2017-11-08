@@ -1,0 +1,8 @@
+"PantsBlack.bmp"
+"PantsBlue.bmp"
+"PantsGrey.bmp"
+"PantsWhite.bmp"
+"SkirtBlack.bmp"
+"kirtBlue.bmp"
+"kirtGrey.bmp"
+"SkirtWhite.bmp"

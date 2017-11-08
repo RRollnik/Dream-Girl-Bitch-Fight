@@ -74,8 +74,9 @@ int main(int argc, char*argv[])
 		switch (state)
 		{
 		case 1:
-			MenuState* a = new MenuState(window, renderer, volume, state);
-			delete a;
+			//MenuState* a = new MenuState(window, renderer, volume, state);
+			//delete a;
+			state = 2;
 			break;
 		case 2:
 			CharacterCreationState* a = new CharacterCreationState(window, renderer, volume, state);

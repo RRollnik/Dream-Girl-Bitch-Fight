@@ -17,88 +17,69 @@ CharacterCreationState::CharacterCreationState(SDL_Window* _window, SDL_Renderer
 	std::ifstream file("hair.txt");
 	if (file.is_open())
 	{
-		char* a2[4];
+		char* a2[10];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 10; ++i)
 		{
 			file >> a2[i];
-			race.push_back(Sprite(_renderer, a2[i], x, y, w, h));
+			hair.push_back(Sprite(_renderer, a2[i], x, y, w, h));
 		}
 	}
 
-	std::ifstream file("hairColour.txt");
+	std::ifstream file("eyes.txt");
 	if (file.is_open())
 	{
-		char* a3[4];
+		char* a3[13];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 13; ++i)
 		{
 			file >> a3[i];
-			race.push_back(Sprite(_renderer, a3[i], x, y, w, h));
-		}
-	}
-
-	std::ifstream file("eyeSize.txt");
-	if (file.is_open())
-	{
-		char* a4[4];
-
-		for (int i = 0; i < 4; ++i)
-		{
-			file >> a4[i];
-			race.push_back(Sprite(_renderer, a4[i], x, y, w, h));
-		}
-	}
-
-	std::ifstream file("eyeColour.txt");
-	if (file.is_open())
-	{
-		char* a5[4];
-
-		for (int i = 0; i < 4; ++i)
-		{
-			file >> a5[i];
-			race.push_back(Sprite(_renderer, a5[i], x, y, w, h));
+			eyes.push_back(Sprite(_renderer, a3[i], x, y, w, h));
 		}
 	}
 
 	std::ifstream file("lips.txt");
 	if (file.is_open())
 	{
-		char* a6[4];
+		char* a4[8];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
-			file >> a6[i];
-			race.push_back(Sprite(_renderer, a6[i], x, y, w, h));
+			file >> a4[i];
+			lips.push_back(Sprite(_renderer, a4[i], x, y, w, h));
 		}
 	}
 
 	std::ifstream file("top.txt");
 	if (file.is_open())
 	{
-		char* a7[4];
+		char* a5[20];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 20; ++i)
 		{
-			file >> a7[i];
-			race.push_back(Sprite(_renderer, a7[i], x, y, w, h));
+			file >> a5[i];
+			top.push_back(Sprite(_renderer, a5[i], x, y, w, h));
 		}
 	}
 
 	std::ifstream file("bottom.txt");
 	if (file.is_open())
 	{
-		char* a8[4];
+		char* a6[8];
 
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
-			file >> a8[i];
-			race.push_back(Sprite(_renderer, a8[i], x, y, w, h));
+			file >> a6[i];
+			bottom.push_back(Sprite(_renderer, a6[i], x, y, w, h));
 		}
 	}
 
-	StateLoop(_window, _renderer, _volume, _state);
+	window = _window;
+	renderer = _renderer;
+	volume = _volume;
+	state = _state;
+
+	StateLoop();
 }
 
 CharacterCreationState::~CharacterCreationState()
@@ -125,10 +106,21 @@ void CharacterCreationState::readFile(char* _file, int _numWords, SDL_Renderer* 
 }
 */
 
-void CharacterCreationState::StateLoop(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state)
+void CharacterCreationState::StateLoop()
 {
 	bool quit = false;
 	SDL_Event e;
+
+	int raceNum = 0;
+	int hairNum = 0;
+	int hairColourNum = 0;
+	int eyeNum = 0;
+	int eyeColourNum = 0;
+	int lipsNum = 0;
+	int topNum = 0;
+	int bottomNum = 0;
+
+	Sprite* bkg = new Sprite(renderer, "Assets\\enterprise.bmp", 1, 1024, 600);
 
 	while (!quit)
 	{
@@ -136,24 +128,25 @@ void CharacterCreationState::StateLoop(SDL_Window* _window, SDL_Renderer * _rend
 		{
 			if (e.type == SDL_QUIT)
 			{
-				_state = 0;
+				state = 0;
 				quit = true;
 			}
 		}
 
-		SDL_RenderClear(_renderer);
+		SDL_RenderClear(renderer);
 
 		//background->draw();
 
-		SDL_RenderPresent(_renderer);
+		SDL_RenderPresent(renderer);
 	}
 
 }
 
 Sprite CharacterCreationState::GetOutfit(int _player)
 {
-
-
+	Sprite* outfit = new Sprite(renderer, "temp.bmp", x, y, w, h);
+	
+	outfit->makeImage(char* race, char* hair, char* eyes, char* lips, char* top, char* bottom);
 
 	return *outfit;
 }

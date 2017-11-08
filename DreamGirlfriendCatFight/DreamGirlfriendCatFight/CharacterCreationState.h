@@ -13,7 +13,6 @@ public:
 	CharacterCreationState(SDL_Window* _window, SDL_Renderer* _renderer, int &_volume, int &_state);
 	~CharacterCreationState();
 
-	void StateLoop(SDL_Window* _window, SDL_Renderer * _renderer, int &_volume, int &_state);
 	void Update();
 	void Draw();
 	void StateLoop();
@@ -27,15 +26,18 @@ protected:
 	int h = 1920;
 	int w = 1080;
 
+	SDL_Window* window;
+	SDL_Renderer * renderer;
+	int volume;
+	int state;
+
 	std::vector<Sprite> race;
 	std::vector<Sprite> hair;
-	std::vector<Sprite> eyeSize;
-	std::vector<Sprite> eyeColour;
-	std::vector<Sprite> mouth;
+	std::vector<Sprite> eyes;
+	std::vector<Sprite> lips;
 	std::vector<Sprite> top;
 	std::vector<Sprite> bottom;
 
-	Sprite* outfit;
 	std::vector<int> outfitData;
 
 	//void readFile(char* _file, int _numWords, SDL_Renderer* _renderer);

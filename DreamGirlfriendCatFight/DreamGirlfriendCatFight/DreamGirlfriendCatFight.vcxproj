@@ -144,8 +144,12 @@
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="bottom.txt" />
     <Text Include="hair.txt" />
     <Text Include="race.txt" />
+    <Text Include="eyes.txt" />
+    <Text Include="lips.txt" />
+    <Text Include="top.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
