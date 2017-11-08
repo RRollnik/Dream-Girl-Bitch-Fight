@@ -2,7 +2,7 @@
 #include "Girlfriend.h"
 #include "HealthBar.h"
 #include "SupportBar.h"
-
+#include "InputManager.h"
 
 class FightState
 {

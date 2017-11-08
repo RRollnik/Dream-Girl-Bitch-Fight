@@ -9,7 +9,6 @@ FightState::FightState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volu
 
 	girlFriendA = _a;
 	girlFriendB = _b;
-	quit = false;
 
 	healthBarA = new HealthBar(renderer, "_HealthBarImage", 0, 0, 100, 50, girlFriendA);
 	healthBarB = new HealthBar(renderer, "_HealthBarImage", 0, 0, 0, 0, girlFriendA);
@@ -25,9 +24,32 @@ FightState::~FightState()
 
 void FightState::StateLoop()
 {
+
+	InputManager* input = new InputManager();
+	// This is done once in case the user if holding the mouse down upon entering the state.
+	input->LMB();
+
+	SDL_Event e;
+
+	Sprite* bkg = new Sprite(renderer, "bkg2.bmp", 0, 0, 1920, 1080);
+
+	quit = false;
 	while (!quit)
 	{
+		while (SDL_PollEvent(&e)) // allow closing SDL window to quit
+		{
+			if (e.type == SDL_QUIT)
+			{
+				state = 0;
+				quit = true;
+			}
+		}
+
+		//if ((input->LMB() == 1))
+
 		SDL_RenderClear(renderer);
+
+		bkg->Draw();
 
 		//Fight(gFriendA, gFriendB);
 		//Fight(gFriendB, gFriendA);
@@ -36,9 +58,8 @@ void FightState::StateLoop()
 		//gFriendB()->Update();
 		//Since we'll make changes directly to the gFriend in Fight(), presumably, we don't need to update them. Probably.
 
-	//	AreYouAGoodBoyfriend->Update();
-		//I'm not sure how much we want the gFriend to move, but if we do we'll need to improve the DrawOutfit, and potentially make a new DrawGirlfriend that'll get the offset add it to the current X and Y of
-		//the image, and so on
+		//supportBar->Update();
+		
 
 		//background->draw();
 		//AreYouAGoodBoyfriend()->draw();
