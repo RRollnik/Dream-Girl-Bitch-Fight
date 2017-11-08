@@ -1,6 +1,6 @@
 #include "MenuState.h"
 
-MenuState(sdl_window window, sdl_renderer renderer, int volume, int state)
+MenuState::MenuState(SDL_Window* _window, SDL_Renderer* _renderer, int volume, int _state)
 {
 	bool quit = false;
 	SDL_Event e;
@@ -18,13 +18,14 @@ MenuState(sdl_window window, sdl_renderer renderer, int volume, int state)
 
 		SDL_RenderClear(_renderer);
 
-		startButton->draw(stuff)
-			helpButton->draw(stuff)
-			exitButton->draw(stuff)
+		Sprite* menubkg = new Sprite(_renderer, "bkg.bmp", 0, 0, 1920, 1080);
+		startButton->Draw();
+		helpButton->Draw();
+		exitButton->Draw();
 
 
-
-			//background->draw();
+		
+		menubkg->Draw();
 
 			SDL_RenderPresent(_renderer);
 

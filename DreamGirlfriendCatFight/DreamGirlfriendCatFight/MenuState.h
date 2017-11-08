@@ -4,23 +4,21 @@
 #define _MenuState_h_
 
 #include "Button.h"
-#include "SDL.h"
+#include "Sprite.h"
 
-class Menu
+class MenuState
 {
 public:
-	MenuState(sdl_window window, sdl_renderer renderer, int volume, int state);
-	~MenuState;
+	MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int state);
+	~MenuState();
 
-	Button startButton
-		Button helpButton
-		Button exitButton
+	Button* startButton;
+	Button* helpButton;
+	Button* exitButton;
 
 
 private:
 
 };
-
-,
 
 #endif
