@@ -31,7 +31,7 @@ void MenuState::StateLoop()
 
 		SDL_RenderClear(renderer);
 
-		Sprite* menubkg = new Sprite(renderer, "bkg.bmp", 0, 0, 1920, 1080);
+		Sprite* menuBkg = new Sprite(renderer, "MenuBkg.bmp", 0, 0, 1920, 1080);
 		Button* playButton = new Button(renderer, "PlayButton.bmp", "PlayButton.bmp", 600, 100, 1920, 1080);
 		Button* exitButton = new Button(renderer, "QuitButton.bmp", "QuitButton.bmp", 600, 450, 1920, 1080);
 		Button* helpButton = new Button(renderer, "HelpButton.bmp", "HelpButton.bmp", 600, 800, 1920, 1080);
