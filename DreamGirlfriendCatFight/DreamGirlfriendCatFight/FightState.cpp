@@ -10,8 +10,11 @@ FightState::FightState(SDL_Window* _window, SDL_Renderer * _renderer, int &_volu
 	girlFriendA = _a;
 	girlFriendB = _b;
 
-	healthBarA = new HealthBar(renderer, "_HealthBarImage", 0, 0, 100, 50, girlFriendA);
-	healthBarB = new HealthBar(renderer, "_HealthBarImage", 0, 0, 0, 0, girlFriendA);
+	bkgBarA = new Sprite(renderer, "_bkgBar.bmp", 200, 100, 100, 50);
+	bkgBarB = new Sprite(renderer, "_bkgBar.bmp", 800, 100, 100, 50);
+
+	healthBarA = new HealthBar(renderer, "_HealthBarImage.bmp", 200, 100, 100, 50, girlFriendA);
+	healthBarB = new HealthBar(renderer, "_HealthBarImage.bmp", 800, 100, 100, 50, girlFriendB);
 
 	player1Turn = true;
 	player2Turn = false;
@@ -66,6 +69,12 @@ void FightState::StateLoop()
 
 		SDL_RenderPresent(renderer);
 	}
+
+	delete input;
+	delete healthBarA;
+	delete healthBarB;
+	delete bkgBarA;
+	delete bkgBarB;
 
 }
 

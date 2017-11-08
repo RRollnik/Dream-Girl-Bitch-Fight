@@ -239,6 +239,8 @@ void CharacterCreationState::StateLoop()
 
 		bkg->Draw();
 
+		start->Draw();
+
 		race.at(raceNum1)->Draw();
 		hair.at(hairNum1)->Draw();
 		eyes.at(eyeNum1)->Draw();
