@@ -1,6 +1,6 @@
 #include "MenuState.h"
 
-MenuState::MenuState(SDL_Window* _window, SDL_Renderer* _renderer, int volume, int _state)
+MenuState::MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int &state)
 {
 	bool quit = false;
 	SDL_Event e;
@@ -11,31 +11,45 @@ MenuState::MenuState(SDL_Window* _window, SDL_Renderer* _renderer, int volume, i
 		{
 			if (e.type == SDL_QUIT)
 			{
-				_state = 0;
+				state = 0;
 				quit = true;
 			}
 		}
 
-		SDL_RenderClear(_renderer);
+		SDL_RenderClear(renderer);
 
-		Sprite* menubkg = new Sprite(_renderer, "bkg.bmp", 0, 0, 1920, 1080);
-		Button* playButton = new Button(_renderer, "PlayButton.bmp", "PlayButton.bmp", 0, 0, 1920, 1080);
-		Button* exitButton = new Button(_renderer, "QuitButton.bmp", "QuitButton.bmp", 0, 0, 1920, 1080);
-		Button* helpButton = new Button(_renderer, "HelpButton.bmp", "HelpButton.bmp", 0, 0, 1920, 1080);
-		
-		
+		Sprite* menubkg = new Sprite(renderer, "bkg.bmp", 0, 0, 1920, 1080);
+		Button* playButton = new Button(renderer, "PlayButton.bmp", "PlayButton.bmp", 600, 100, 1920, 1080);
+		Button* exitButton = new Button(renderer, "QuitButton.bmp", "QuitButton.bmp", 600, 450, 1920, 1080);
+		Button* helpButton = new Button(renderer, "HelpButton.bmp", "HelpButton.bmp", 600, 800, 1920, 1080);
+
+
 		playButton->Draw();
 		helpButton->Draw();
 		exitButton->Draw();
 
 
-		
+
 		menubkg->Draw();
 
-		playButton->Clicked;
-		helpButton->Clicked;
-		exitButton->Clicked;
+		if (playButton->Clicked())
+		{
+			quit = true;
+		}
 
-			SDL_RenderPresent(_renderer);
+		if (helpButton->Clicked())
+		{
+			Button* helpFileButton = new Button(renderer, "HelpFile.bmp", "HelpFile.bmp", 600, 800, 1920, 1080);
+		}
+
+
+		if (exitButton->Clicked())
+		{
+			state = 0;
+			quit = true;
+		}
+	
+		SDL_RenderPresent(renderer);
 
 	}
+}

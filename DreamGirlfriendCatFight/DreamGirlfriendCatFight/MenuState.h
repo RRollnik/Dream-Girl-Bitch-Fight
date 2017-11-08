@@ -9,7 +9,7 @@
 class MenuState
 {
 public:
-	MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int state);
+	MenuState(SDL_Window* window, SDL_Renderer* renderer, int volume, int &state);
 	~MenuState();
 
 
